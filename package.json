@@ -1,6 +1,6 @@
 {
   "name": "rev-engineer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Local reverse-engineering CLI and agent workflows for binaries, packages, and runtime captures.",
   "license": "MIT",
   "type": "module",
