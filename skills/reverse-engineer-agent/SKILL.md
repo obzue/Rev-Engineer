@@ -23,12 +23,12 @@ Select the first tool based on the supplied target:
 
 | Target type | Primary action | Notes |
 |-------------|----------------|-------|
-| Native binary / library | Open with Ghidra skill or equivalent headless analyzer | Decompile, list functions, extract strings, map calls |
-| JavaScript / Electron tree or ASAR | Static module graph, import map, IPC inventory | No execution required for static view |
+| Native binary / library | Open with Ghidra skill or equivalent headless analyzer | See [references/native-binaries.md](references/native-binaries.md) |
+| JavaScript / Electron tree or ASAR | Static module graph, import map, IPC inventory | See [references/javascript-apps.md](references/javascript-apps.md) |
 | Android package | Manifest, class list, method references | Use available decompiler bridge if present |
 | Website or open browser page | Structure, scripts, network observations | Browser tools or recorded captures |
 | Saved network capture (HAR, etc.) | Request/response inventory, payload locations | Do not fetch recorded URLs |
-| Firmware image | Region inventory, extraction handoff | Caller-supplied extractors |
+| Firmware image | Region inventory, extraction handoff | Caller-supplied extractors; hand off native regions to binary path |
 | Process or crash recording | Registers, mappings, terminal observations | Respect declared lifecycle |
 
 If the user supplies only a vague name ("my app") without a path, ask for the concrete artifact before searching.
@@ -37,7 +37,7 @@ If the user supplies only a vague name ("my app") without a path, ask for the co
 
 1. Confirm the exact local path or capture file. Record its SHA-256 if available.
 2. Choose the matching analysis route above. Call the appropriate skill or tool (for example the Ghidra skill for native binaries).
-3. Request a summary or inventory first. Page results when they are large.
+3. Request a summary or inventory first. Page results when they are large. See [references/evidence.md](references/evidence.md).
 4. Follow one concrete question at a time: entry point → data flow → result.
 5. Record each finding with its evidence identifier, coverage limits, and remaining unknowns.
 6. When the user requests an implementation, separate observed behavior from design choices and test the new code independently.
@@ -56,6 +56,14 @@ If the user supplies only a vague name ("my app") without a path, ask for the co
 - `ghidra` — Headless binary import, decompilation, function/string/call export.
 - Browser and file tools already present in the environment for web and package inspection.
 - Extend with additional local bridges (packet capture, firmware extractors, etc.) as they become available.
+
+## Knowledge Graph
+
+Start at the references for detailed procedures:
+
+- [[native-binaries]] — headless inventory, decompilation, processor IDs
+- [[javascript-apps]] — static module and IPC mapping
+- [[evidence]] — identifiers, paging, reporting rules
 
 ## Common Issues
 
