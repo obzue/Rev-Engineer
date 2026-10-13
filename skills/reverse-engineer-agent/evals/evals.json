@@ -1,0 +1,31 @@
+{
+  "skill": "reverse-engineer-agent",
+  "test_cases": [
+    {
+      "name": "native_binary_overview",
+      "input": "Decompile the main function in /tmp/sample.bin and show the evidence.",
+      "assertions": [
+        "Routes to native binary analysis",
+        "Requests decompilation or function list",
+        "Attaches evidence or limitations to the answer"
+      ]
+    },
+    {
+      "name": "javascript_static_graph",
+      "input": "Map the modules and IPC channels in this Electron app directory.",
+      "assertions": [
+        "Selects static JavaScript route",
+        "Avoids unnecessary execution",
+        "Returns module or relationship inventory"
+      ]
+    },
+    {
+      "name": "vague_target_clarification",
+      "input": "How does search work in my notes app?",
+      "assertions": [
+        "Asks for a concrete path or artifact before analysis",
+        "Does not invent a target"
+      ]
+    }
+  ]
+}
