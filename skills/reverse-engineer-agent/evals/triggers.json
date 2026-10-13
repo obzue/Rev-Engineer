@@ -1,0 +1,25 @@
+{
+  "skill": "reverse-engineer-agent",
+  "test_cases": [
+    {
+      "input": "Reverse engineer this binary and explain the feature.",
+      "should_trigger": true
+    },
+    {
+      "input": "Decompile the function at this address and show callers.",
+      "should_trigger": true
+    },
+    {
+      "input": "Trace how the clipboard bridge works in the Electron app.",
+      "should_trigger": true
+    },
+    {
+      "input": "Write a unit test for the sorting function in the source repo.",
+      "should_trigger": false
+    },
+    {
+      "input": "Explain the architecture of this open-source library.",
+      "should_trigger": false
+    }
+  ]
+}
