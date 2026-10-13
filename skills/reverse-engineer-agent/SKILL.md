@@ -64,6 +64,7 @@ Start at the references for detailed procedures:
 - [[native-binaries]] — headless inventory, decompilation, processor IDs
 - [[javascript-apps]] — static module and IPC mapping
 - [[evidence]] — identifiers, paging, reporting rules
+- [[firmware-packets]] — firmware region inventory and packet/capture notes
 
 ## Common Issues
 
