@@ -1,16 +1,21 @@
 {
   "name": "rev-engineer",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Local reverse-engineering CLI and agent workflows for binaries, packages, and runtime captures.",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "rev-engineer": "scripts/cli.mjs"
+    "rev-engineer": "scripts/cli.mjs",
+    "rev-engineer-mcp": "scripts/mcp-server.mjs"
   },
   "scripts": {
     "start": "node scripts/cli.mjs",
+    "mcp": "node scripts/mcp-server.mjs",
     "build": "echo 'build placeholder'",
     "test": "echo 'test placeholder'"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1"
   },
   "engines": {
     "node": ">=22"
