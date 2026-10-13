@@ -7,17 +7,19 @@ Point an agent or CLI at a shipped binary, application package, website capture,
 ## Quick start
 
 ```bash
-# After the CLI is installed
-rev-engineer --help
+node scripts/cli.mjs --help
+# or after global install
+rev-engineer doctor
+rev-engineer analyze-binary /path/to/binary
 ```
 
-For agents, install the matching skill and register any local MCP server that exposes the analysis tools.
+For agents, install the skill from `skills/reverse-engineer-agent` and use its references for native, JavaScript, and evidence workflows.
 
 ## Supported targets (current baseline)
 
 | Target | Primary output | Requirements |
 |--------|----------------|--------------|
-| Native binary | Functions, decompilation, strings, call references | Headless analyzer (see ghidra skill) |
+| Native binary | Functions, decompilation, strings, call references | Headless analyzer (ghidra skill) |
 | JavaScript / Electron package | Module graph, imports, IPC inventory | Node.js |
 | Android package | Manifest, classes, method references | Available decompiler bridge |
 | Website / browser session | Structure, scripts, network notes | Browser tools |
@@ -35,8 +37,7 @@ For agents, install the matching skill and register any local MCP server that ex
 
 ```bash
 npm install
-npm run build
-npm test
+npm start -- doctor
 ```
 
 See `docs/` for provider setup and `skills/` for agent instructions.
